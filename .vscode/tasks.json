@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"],
+      "label": "Build Extension (npm run build)",
+      "detail": "Сборка TypeScript, Service Worker и React Side Panel в папку dist/"
+    },
+    {
+      "type": "npm",
+      "script": "dev:panel",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*VITE.*",
+          "endsPattern": ".*http://localhost:.*"
+        }
+      },
+      "label": "Dev Side Panel (npm run dev:panel)",
+      "detail": "Запуск Vite Dev сервера с HMR для верстки боковой панели"
+    },
+    {
+      "type": "npm",
+      "script": "typecheck",
+      "group": "test",
+      "problemMatcher": ["$tsc"],
+      "label": "Typecheck (npm run typecheck)",
+      "detail": "Проверка типов TypeScript (tsc --noEmit)"
+    },
+    {
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "Run Tests (npm test)",
+      "detail": "Запуск всех юнит- и интеграционных тестов"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "🚀 Launch Chrome",
+      "url": "https://hh.ru/applicant/skill_verifications/methods",
+      "runtimeArgs": ["--load-extension=${workspaceFolder}\\dist"],
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Build Extension (npm run build)",
+      "userDataDir": "${workspaceFolder}\\.vscode\\chrome-profile"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🧪 Debug All Tests",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vitest", "run", "tests/**/*.test.ts"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🔍 Debug Current Test File",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vitest", "run", "${file}"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "🌐 Debug Side Panel (Vite Dev)",
+      "url": "http://localhost:5173/src/panel/index.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Dev Side Panel (npm run dev:panel)",
+      "userDataDir": "${workspaceFolder}\\.vscode\\chrome-profile"
+    }
+  ]
+}

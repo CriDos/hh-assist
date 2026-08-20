@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "hh-assist",
+  "version": "1.0.0",
+  "description": "Решение сертификационных тестов hh.ru по API: выбор тестов на странице каталога, статус и лог в side panel",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "tabs",
+    "scripting",
+    "alarms",
+    "clipboardWrite",
+    "webRequest",
+    "contextMenus"
+  ],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "hh-assist: панель",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "panel/index.html"
+  }
+}

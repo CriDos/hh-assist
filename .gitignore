@@ -1,0 +1,42 @@
+# Chrome / extension artifacts
+*.pem
+*.crx
+*.zip
+
+# Network captures (могут содержать чувствительные данные сеанса)
+*.network-request
+*.network-response
+dumps/
+
+# Node / build output
+node_modules/
+dist/
+release/
+build/
+src/panel/dist/
+
+# Environment and secrets
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+*.swp
+.kilo/
+
+# Agent configs
+AGENTS.md
+agents.md
+.agents/
